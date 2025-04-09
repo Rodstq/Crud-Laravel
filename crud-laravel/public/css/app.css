@@ -1,0 +1,8 @@
+
+.custom-bg-indigo, .btn-indigo{
+    background-color: var(--bs-indigo) !important;
+}
+
+.custom-txt-white, .btn-indigo{
+    color: var(--bs-white) !important;
+}

@@ -10,7 +10,7 @@ class dados_editados extends Model
     use HasFactory;
 
     protected $table = 'dados_editados';
-
+    
     protected $fillable = [
         'nome',
         'email',
@@ -20,7 +20,6 @@ class dados_editados extends Model
         'escolaridade',
         'altura',
         'peso',
-        'criado_em',
         'atualizado_em'
     ];
 }

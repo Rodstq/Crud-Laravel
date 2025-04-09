@@ -5,8 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DadosOriginais; 
 
+
+use Carbon\Carbon;
+
 class DadosOriginaisController
 {   
+
+
+    function retorna_tela_um(){
+        return view('tela_um');
+    }
 
     public function retorna_dados_originais(){
 
@@ -19,6 +27,7 @@ class DadosOriginaisController
     
     public function cria_dados_originais(Request $request){
       
+        
       $validated =  $request->validate([
             'nome' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
@@ -28,22 +37,18 @@ class DadosOriginaisController
             'escolaridade' => 'required|string|max:255',
             'altura' => 'required|numeric|between:0,9.99',
             'peso' => 'required|numeric|between:0,999.99',
-            'criado_em' => [
-            'required',
-            'date',
-            'before_or_equal:' . now()->subDays(7)->toDateString(),
-        ], 
     ]);
+
+    $validated['criado_em'] = Carbon::now();
 
     try{
         DadosOriginais::create($validated);
 
-    return response()->json(['message' => 'Dados salvos com sucesso!']);
+        return redirect()->route('retorna_tela_um')->with('success', 'Vaga criada com sucesso!');
 
     } catch (\Exception $erro_create){
         return response()->json(['error' =>'Erro ao inserir os dados originais', 'details' => $erro_create->getMessage()]);
     }
-    
 
     }
 }

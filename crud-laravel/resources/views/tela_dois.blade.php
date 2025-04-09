@@ -3,6 +3,9 @@
 @section('title', 'tela 2')
 
 @section('content')
+
+<h2> Editar Usuário </h2>
+
     <table class="table table-striped">
         <thead>
             <th scope="col"> Nome </th>
@@ -15,6 +18,7 @@
             <th scope="col"> peso </th>
             <th scope="col"> criado_em </th>
             <th scope="col"> atualizado_em </th>
+            <th></th>
         </thead>
         <tbody>
         @foreach($dados as $dado)
@@ -29,6 +33,9 @@
             <td>{{$dado->peso}}</td>
             <td>{{$dado->criado_em}}</td>
             <td>{{$dado->atualizado_em}}</td>
+            <td>
+                <button> Atualizar </button>
+            </td>
             </tr>
             @endforeach
         </tbody>

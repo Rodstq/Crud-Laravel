@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Schema;
 
 
 
+
+
 return new class extends Migration
 {
     /**
@@ -27,7 +29,6 @@ return new class extends Migration
             $table->decimal('altura',total: 3, places: 2)->nullable(false);
             $table->decimal('peso',total: 5, places: 2)->nullable(false);
             $table->timestamp('criado_em')->nullable();
-            $table->timestamp('atualizado_em')->nullable();
         });
     }
 
