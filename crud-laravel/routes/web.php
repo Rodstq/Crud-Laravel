@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DadosOriginaisController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,10 +20,9 @@ Route::get('/', function () {
 
 Route::get('/model',function(){
 
-    $dados = \App\Models\dados_editados::all();
-
-    
-
-    return $dados;
+    return view('tela_um');
 
 });
+
+Route::get('/dados_originais',[DadosOriginaisController::class,'retorna_dados_originais']);
+

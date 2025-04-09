@@ -17,15 +17,15 @@ return new class extends Migration
 
             $table->id()->autoIncrement();
             $table->string('nome');
-            $table->string('e-mail');
+            $table->string('email');
             $table->char('telefone', 11);
             $table->integer('idade');
-            $table->char('cpf', 11)->unique();
+            $table->char('cpf', 11)->nullable(false)->unique();
             $table->string('escolaridade');
             $table->decimal('altura',total: 3, places: 2);
             $table->decimal('peso',total: 5, places: 2);
-            $table->boolean('possui_filhos');
-            $table->timestamps('atualizado em');
+            $table->timestamp('criado_em')->nullable();
+            $table->timestamp('atualizado_em')->nullable();
 
         });
 
