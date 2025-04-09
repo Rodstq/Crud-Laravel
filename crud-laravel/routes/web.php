@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[DadosOriginaisController::class,'retorna_tela_um'])->name('retorna_tela_um');
 
-Route::post('/cria_dados_originais',[DadosOriginaisController::class,'cria_dados_originais'])->name('cria_dados_originais');
+Route::get('/dados',[DadosOriginaisController::class,'retorna_dados_originais'])->name('retorna_tela_dois');;
 
-Route::get('/dados_originais',[DadosOriginaisController::class,'retorna_dados_originais'])->name('retorna_tela_dois');;
+Route::post('/dados',[DadosOriginaisController::class,'cria_dados_originais'])->name('cria_dados_originais');
+
 

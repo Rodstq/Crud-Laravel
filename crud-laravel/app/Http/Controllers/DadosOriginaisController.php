@@ -44,7 +44,7 @@ class DadosOriginaisController
     try{
         DadosOriginais::create($validated);
 
-        return redirect()->route('retorna_tela_um')->with('success', 'Vaga criada com sucesso!');
+        return redirect()->route('retorna_tela_um')->with('success', 'Cadastro criado com sucesso!');
 
     } catch (\Exception $erro_create){
         return response()->json(['error' =>'Erro ao inserir os dados originais', 'details' => $erro_create->getMessage()]);
