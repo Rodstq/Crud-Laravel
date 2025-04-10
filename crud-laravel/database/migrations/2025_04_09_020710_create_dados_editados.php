@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('escolaridade');
             $table->decimal('altura',total: 3, places: 2);
             $table->decimal('peso',total: 5, places: 2);
+            $table->timestamp('criado_em')->nullable();
             $table->timestamp('atualizado_em')->nullable();
 
         });

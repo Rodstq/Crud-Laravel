@@ -14,7 +14,7 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     </head>
-    <body class="p-">
+    <body class="">
 
         <header class="mb-4 ">
             <nav class="d-flex justify-content-end custom-bg-indigo">
@@ -23,14 +23,11 @@
             </nav>
         </header>
         
-       <main class="h-80 d-flex flex-column align-items-center">
-            <section class="w-75 d-flex flex-column align-items-center">
+       <main class="d-flex flex-column align-items-center">
+            <section class="container">
                 @yield('content')
             </section>
        </main>
-             
-        <footer>
-            <p> Crud Basico em Laravel </p>
-        </footer>
+    
     </body>
 </html>

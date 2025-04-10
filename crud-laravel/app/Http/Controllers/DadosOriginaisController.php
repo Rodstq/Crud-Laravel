@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DadosEditados;
 use Illuminate\Http\Request;
 use App\Models\DadosOriginais; 
 
@@ -16,15 +17,6 @@ class DadosOriginaisController
         return view('tela_um');
     }
 
-    public function retorna_dados_originais(){
-
-        $dados = DadosOriginais::All();
-
-        return view('tela_dois', 
-            ['dados'=> $dados]
-        );
-    }
-    
     public function cria_dados_originais(Request $request){
       
         
@@ -40,9 +32,16 @@ class DadosOriginaisController
     ]);
 
     $validated['criado_em'] = Carbon::now();
+    $validated['atualizado_em'] = null;
+
+    $validated_editados = $validated;
+    $validated_editados['atualizado_em'] = null;
 
     try{
+
         DadosOriginais::create($validated);
+
+        DadosEditados::create($validated_editados);
 
         return redirect()->route('retorna_tela_um')->with('success', 'Cadastro criado com sucesso!');
 

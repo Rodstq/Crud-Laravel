@@ -21,5 +21,6 @@ class DadosOriginais extends Model
         'altura',
         'peso',
         'criado_em',
+        'atualizado_em'
     ];
 }

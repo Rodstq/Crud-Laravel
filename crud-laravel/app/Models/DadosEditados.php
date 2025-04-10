@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class dados_editados extends Model
+class DadosEditados extends Model
 {
-    use HasFactory;
+    use HasFactory; 
 
-    protected $table = 'dados_editados';
+    public $timestamps = false;
     
     protected $fillable = [
         'nome',
@@ -20,6 +20,7 @@ class dados_editados extends Model
         'escolaridade',
         'altura',
         'peso',
+        'criado_em',
         'atualizado_em'
     ];
 }

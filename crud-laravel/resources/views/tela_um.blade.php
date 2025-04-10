@@ -4,6 +4,7 @@
 
 @section('content')
 
+<div class=" d-flex flex-column align-items-center">
 <h2> Cadastrar Usuário </h2>
     <form class="w-50"action="{{route('cria_dados_originais')}}" method="POST">
         @csrf
@@ -35,7 +36,7 @@
             name="email"
             required>
 
-            <label for="telefone" class="form-label">telefone</label>
+            <label for="telefone" class="form-label">Telefone</label>
             <input type="number" class="form-control" id="telefone" name="telefone" required>
 
             <label for="idade" class="form-label">Idade</label>
@@ -44,18 +45,18 @@
             <label for="cpf" class="form-label">CPF</label>
             <input type="number" class="form-control" id="cpf" name="cpf" required>
 
-            <label for="escolaridade" class="form-label">escolaridade</label>
+            <label for="escolaridade" class="form-label">Escolaridade</label>
             <input type="text" class="form-control" id="escolaridade" name="escolaridade" required>
 
-            <label for="altura" class="form-label">altura</label>
+            <label for="altura" class="form-label">Altura</label>
             <input type="number"  min="0" max="3" step="0.01" class="form-control" id="altura" name="altura" required>
 
-            <label for="peso" class="form-label">peso</label>
+            <label for="peso" class="form-label">Peso</label>
             <input type="number" min="0" max="500" step="0.01"  class="form-control" id="peso" name="peso" required>
         
 
-            <button type="submit" class="btn btn-indigo my-4">Submit</button>
+            <button type="submit" class="btn btn-indigo my-4">Cadastrar</button>
         </fieldset>
     </form>
-
+</div>
 @endsection
