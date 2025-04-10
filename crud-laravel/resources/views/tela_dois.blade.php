@@ -116,8 +116,6 @@
             array_tds.push(td.innerHTML)
        }
 
-       console.log(array_tds);
-
        let array_ths = [];
 
        let ths = e.parentNode.parentNode.parentNode.parentNode.parentNode.getElementsByClassName('headers_edit');
@@ -126,20 +124,19 @@
             array_ths.push(th.innerHTML)
        }
 
-       console.log(array_ths);
-
        let dados_input = e.parentNode.querySelectorAll('input');
 
-       console.log(dados_input.length);
-
-       console.log(dados_input);
-
        for(let i = 2; i < dados_input.length; i++ ){
-            dados_input[i].value = array_tds[i-2];
+            if(array_tds[i-2] == "" | array_tds[i-2] == " " | array_tds[i-2] == "<br>"){  
+                window.alert('existem campos vazios na edição');
+                location.reload();
+                break;         
+            }
+                dados_input[i].value = array_tds[i-2];  
+                document.querySelector(".form_editar").submit();
+            }
        }
-        
-       document.querySelector(".form_editar").submit();
-    }
+       
 </script>
 
 
